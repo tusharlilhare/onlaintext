@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>प्रश्न जोड़ें</title>
+</head>
+<body>
+    <h1>नया प्रश्न जोड़ें</h1>
+    <input type="text" id="question" placeholder="प्रश्न डालें" />
+    <input type="text" id="option1" placeholder="विकल्प 1" />
+    <input type="text" id="option2" placeholder="विकल्प 2" />
+    <input type="text" id="option3" placeholder="विकल्प 3" />
+    <input type="text" id="option4" placeholder="विकल्प 4" />
+    <input type="text" id="correctAnswer" placeholder="सही उत्तर" />
+    <input type="text" id="description" placeholder="विवरण" />
+    <button onclick="addQuestion()">प्रश्न जोड़ें</button>
+
+    <script>
+        const apiBaseUrl = 'http://localhost:5000';
+        function addQuestion() {
+            const question = document.getElementById('question').value;
+            const options = [
+                document.getElementById('option1').value,
+                document.getElementById('option2').value,
+                document.getElementById('option3').value,
+                document.getElementById('option4').value
+            ];
+            const answer = document.getElementById('correctAnswer').value;
+            const description = document.getElementById('description').value;
+
+            fetch(`${apiBaseUrl}/add-question`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question, options, answer, description })
+            }).then(response => response.json())
+              .then(data => {
+                  alert(data.message);
+                  document.querySelectorAll('input').forEach(input => input.value = '');
+              });
+        }
+    </script>
+</body>
+</html>

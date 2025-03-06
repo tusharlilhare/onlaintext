@@ -1,0 +1,47 @@
+footer {
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 32px;
+  }
+  footer .left {
+    width: 100%;
+  }
+  footer img {
+    height: 52px;
+  }
+
+  .links-head {
+    flex-direction: column;
+  }
+  .links-social {
+    flex-direction: column;
+  }
+  .links-head .links {
+    flex-direction: column;
+  }
+  .links-social .links {
+    flex-direction: column;
+  }
+  .copyrightsection {
+    flex-direction: column-reverse;
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+  }
+
+
+@media screen and (max-width: 568px) {
+  /* Hide specific elements by setting their display to none */
+  .header,
+  .web-text,
+  .right-text,
+  #onlineTest,
+  #ebookBtn {
+    display: none;
+  }
+ 
+}
+
+
+/* 788-1268 width to the div container responsive. */
+
