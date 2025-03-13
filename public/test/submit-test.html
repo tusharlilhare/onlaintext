@@ -1,0 +1,169 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit your test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0E5EBF;
+            color: white;
+            padding: 8px;
+            font-size: 14px;
+        }
+        .modal {
+            background-color: white;
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            margin-top: -400px;
+            border-radius: 10px;
+            box-shadow: 4px 14px 14px 14px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+        p {
+            margin: 10px 0 20px;
+            font-size: 16px;
+        }
+
+    #sure{
+        background-color: #071ece;
+        color: white;
+        padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+    }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .btn-confirm {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-cancel {
+            background-color: #f1f1f1;
+            color: black;
+        }
+        .btn-cancel:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        Website: <a href="#" style="color: white;">ISO (Browser) Evaluation & Browser</a> by TARAAsia Welfare Foundation | Helpline: +91-8007 5203 | Email: support@gmail.com
+    </div>
+    <div class="modal">
+        <h2>Confirmation</h2>
+        <p>Are you certain you want to submit your test</p>
+
+       <a href="/view-result.html"    id="sure" > Sure</a>
+
+        
+
+        <a href="/jee/1test.html" id="sure"     >Cancel</a>
+
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit your test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 4px 14px 14px 14px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        #sure {
+            background-color: #071ece;
+            color: white;
+        }
+        #cancel {
+            background-color: #ccc;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <h2>Confirmation</h2>
+        <p>Are you sure you want to submit your test?</p>
+        <button id="sure">Sure</button>
+        <button id="cancel">Cancel</button>
+    </div>
+
+    <script>
+        document.getElementById("sure").addEventListener("click", function() {
+            window.location.href = "view-result.html";
+        });
+
+        document.getElementById("cancel").addEventListener("click", function() {
+            window.history.back(); // Pichle page par wapas jane ke liye
+        });
+    </script>
+</body>
+</html>

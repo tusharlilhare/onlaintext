@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>परिणाम पृष्ठ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .result-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+        .retry-button, .new-test-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px auto;
+        }
+        .retry-button:hover, .new-test-button:hover {
+            background-color: #0056b3;
+        }
+        select {
+            font-size: 16px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>आपका परिणाम</h1>
+        <p>कुल प्रश्न: <span id="total-questions"></span></p>
+        <p>उत्तर दिए गए प्रश्न: <span id="attempted-questions"></span></p>
+        <p>आपका स्कोर: <span class="score" id="final-score"></span></p>
+        
+        <button class="retry-button" onclick="retryQuiz()">पुनः प्रयास करें</button>
+        
+        <label for="test-selector">नया टेस्ट चुनें:</label>
+        <select id="test-selector">
+            <option value="test1.html">टेस्ट 1</option>
+            <option value="test2.html">टेस्ट 2</option>
+            <option value="test3.html">टेस्ट 3</option>
+            <option value="test4.html">टेस्ट 4</option>
+            <option value="test5.html">टेस्ट 5</option>
+            <option value="test6.html">टेस्ट 6</option>
+            <option value="test7.html">टेस्ट 7</option>
+            <option value="test8.html">टेस्ट 8</option>
+            <option value="test9.html">टेस्ट 9</option>
+            <option value="test10.html">टेस्ट 10</option>
+        </select>
+        <button class="new-test-button" onclick="startNewTest()">नया टेस्ट शुरू करें</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let totalQuestions = localStorage.getItem("totalQuestions") || 30;
+            let attempted = localStorage.getItem("attempted") || 0;
+            let score = localStorage.getItem("score") || 0;
+            
+            document.getElementById("total-questions").innerText = totalQuestions;
+            document.getElementById("attempted-questions").innerText = attempted;
+            document.getElementById("final-score").innerText = score;
+        });
+        
+        function retryQuiz() {
+            localStorage.clear();
+            window.location.href = "index.html";
+        }
+        
+        function startNewTest() {
+            let selectedTest = document.getElementById("test-selector").value;
+            localStorage.clear();
+            window.location.href = selectedTest;
+        }
+    </script>
+</body>
+</html>

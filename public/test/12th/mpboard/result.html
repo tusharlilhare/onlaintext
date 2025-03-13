@@ -1,0 +1,269 @@
+<!-- <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सभी टेस्ट के परिणाम</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .result-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .retry-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .retry-button:hover {
+            background-color: #0056b3;
+        }
+        canvas {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>आपके सभी टेस्ट के परिणाम</h1>
+        <table>
+            <tr>
+                <th>टेस्ट का नाम</th>
+                <th>कुल प्रश्न</th>
+                <th>उत्तर दिए गए</th>
+                <th>अंक</th>
+                <th>सही उत्तर</th>
+                <th>फिर से दें</th>
+            </tr>
+            <tbody id="resultTable"></tbody>
+        </table>
+        <canvas id="scoreChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let tests = JSON.parse(localStorage.getItem("testResults")) || [];
+            let resultTable = document.getElementById("resultTable");
+            let testNames = [];
+            let scores = [];
+
+            tests.forEach(test => {
+                testNames.push(test.name);
+                scores.push(test.score);
+                let correctAnswers = test.correctAnswers ? test.correctAnswers.join(', ') : 'N/A';
+                let row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${test.name}</td>
+                    <td>${test.totalQuestions}</td>
+                    <td>${test.attempted}</td>
+                    <td>${test.score}</td>
+                    <td>${correctAnswers}</td>
+                    <td><button class='retry-button' onclick='retryTest("${test.name}")'>पुनः प्रयास करें</button></td>
+                `;
+                resultTable.appendChild(row);
+            });
+
+            const ctx = document.getElementById('scoreChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: testNames,
+                    datasets: [{
+                        label: 'प्राप्त अंक',
+                        data: scores,
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+
+        function retryTest(testName) {
+            window.location.href = `${testName}.html`;
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .result-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .result-container h1 {
+            color: #333;
+        }
+        .result-container .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .result-container .attempted {
+            font-size: 20px;
+            color: #2196F3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .not-attempted {
+            color: #FF5722;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Quiz Results</h1>
+        <p>Attempted: <span class="attempted" id="attempted"></span> | Not Attempted: <span class="not-attempted" id="notAttempted"></span> | Score: <span class="score" id="score"></span></p>
+
+        <h2>Detailed Results:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Q.No</th>
+                    <th>Question</th>
+                    <th>Your Answer</th>
+                    <th>Correct Answer</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTable"></tbody>
+        </table>
+    </div>
+
+    <script>
+        // LocalStorage se data fetch karen
+        const testResults = JSON.parse(localStorage.getItem("testResults"));
+        const latestResult = testResults[testResults.length - 1]; // Sabse latest result
+
+        // Questions array (aapke diye gaye questions ka use karen)
+   
+        // Calculate attempted, not attempted, and score
+        let attempted = latestResult.attempted;
+        let score = latestResult.score;
+        let notAttempted = latestResult.totalQuestions - attempted;
+
+        // Display results
+        document.getElementById("attempted").textContent = attempted;
+        document.getElementById("notAttempted").textContent = notAttempted;
+        document.getElementById("score").textContent = `${score} / ${latestResult.totalQuestions}`;
+
+        // Populate table with results
+        const resultsTable = document.getElementById("resultsTable");
+        questions.forEach((q, index) => {
+            const row = document.createElement("tr");
+            const qNo = document.createElement("td");
+            const question = document.createElement("td");
+            const yourAnswer = document.createElement("td");
+            const correctAnswer = document.createElement("td");
+
+            qNo.textContent = q.num;
+            question.textContent = q.question;
+            yourAnswer.textContent = latestResult.correctAnswers[index] || "Not Answered";
+            correctAnswer.textContent = q.answer;
+
+            if (!latestResult.correctAnswers[index]) {
+                yourAnswer.classList.add("not-attempted");
+            } else if (latestResult.correctAnswers[index] === q.answer) {
+                yourAnswer.style.color = "#4CAF50"; // Green for correct answers
+            } else {
+                yourAnswer.style.color = "#FF5722"; // Red for incorrect answers
+            }
+
+            row.appendChild(qNo);
+            row.appendChild(question);
+            row.appendChild(yourAnswer);
+            row.appendChild(correctAnswer);
+            resultsTable.appendChild(row);
+        });
+    </script>
+</body>
+</html>

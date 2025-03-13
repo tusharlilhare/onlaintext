@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics with Testsieres</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --background-light: #f8f9fc;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: var(--background-light);
+            padding: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .problem-card {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .problem-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .problem-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .buy-now {
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .description {
+            margin-bottom: 40px;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .test-case {
+            background-color: var(--background-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 0;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <!-- Sidebar content -->
+        </aside>
+        
+        <main class="main-content">
+            <div class="problem-card">
+                <div class="problem-info">
+                    <div class="problem-image">
+                        <img src="addition-icon.png" alt="Addition">
+                    </div>
+                    <div>
+                        <h2>Addition</h2>
+                        <p>Validity: 3 months</p>
+                        <p>Language: Html</p>
+                    </div>
+                </div>
+                <button class="buy-now">Buy Now</button>
+            </div>
+
+            <div class="description">
+                <h3>Description</h3>
+                <!-- Description content -->
+            </div>
+
+            <h3>All Test's</h3>
+            <div class="test-grid">
+                <!-- Test case template (repeat 9 times) -->
+                <div class="test-case">
+                    <div class="input-group">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                    </div>
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <!-- Repeat test-case div 8 more times -->
+            </div>
+
+            <div class="test-grid">
+                <!-- Test case template (repeat 9 times) -->
+                <div class="test-case">
+                    <div class="input-group">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                    </div>
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <!-- Repeat test-case div 8 more times -->
+            </div>
+            <div class="test-grid">
+                <!-- Test case template (repeat 9 times) -->
+                <div class="test-case">
+                    <div class="input-group">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                    </div>
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <!-- Repeat test-case div 8 more times -->
+            </div>
+            <div class="test-grid">
+                <!-- Test case template (repeat 9 times) -->
+                <div class="test-case">
+                    <div class="input-group">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                    </div>
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <!-- Repeat test-case div 8 more times -->
+            </div>
+            <div class="test-grid">
+                <!-- Test case template (repeat 9 times) -->
+                <div class="test-case">
+                    <div class="input-group">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                    </div>
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <!-- Repeat test-case div 8 more times -->
+            </div>
+            <div class="test-grid">
+                <!-- Test case template (repeat 9 times) -->
+                <div class="test-case">
+                    <div class="input-group">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                        <input type="text" placeholder="Input">
+                    </div>
+                    <button class="submit-btn">Submit</button>
+                </div>
+                <!-- Repeat test-case div 8 more times -->
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f5f5f5; text-align: center; padding: 20px; }
+        .container { width: 80%; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); }
+        .correct { color: green; font-weight: bold; }
+        .wrong { color: red; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #0d6efd; color: white; }
+        .score-section { margin: 20px 0; font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quiz Results</h2>
+        <p class="score-section">
+            Attempted: <span id="attempted"></span> | Not Attempted: <span id="notAttempted"></span> | Score: <span id="score"></span>
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Q.No</th>
+                    <th>Question</th>
+                    <th>Your Answer</th>
+                    <th>Correct Answer</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTable"></tbody>
+        </table>
+
+    </div>
+
+    <script>
+        function loadResults() {
+            // Get values from localStorage
+            const attempted = localStorage.getItem("attempted") || 0;
+            const notAttempted = localStorage.getItem("notAttempted") || 0;
+            const score = localStorage.getItem("score") || 0;
+            
+            document.getElementById("attempted").textContent = attempted;
+            document.getElementById("notAttempted").textContent = notAttempted;
+            document.getElementById("score").textContent = score;
+
+            // Get results from localStorage
+            let results = JSON.parse(localStorage.getItem("results")) || [];
+            console.log("Loaded Results: ", results); // Debugging purpose
+
+            const resultsTable = document.getElementById("resultsTable");
+            resultsTable.innerHTML = ""; // Clear previous results
+
+            if (results.length === 0) {
+                resultsTable.innerHTML = `<tr><td colspan="4">No results available</td></tr>`;
+                return;
+            }
+
+            results.forEach((result, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${result.question}</td>
+                    <td class="${result.selected === result.correct ? 'correct' : 'wrong'}">
+                        ${result.selected || '<i>Not Attempted</i>'}
+                    </td>
+                    <td class="correct">${result.correct}</td>
+                `;
+                resultsTable.appendChild(row);
+            });
+        }
+
+        function restartQuiz() {
+            localStorage.clear();
+            window.location.href = "index.html"; // Redirect to start quiz
+        }
+
+        window.onload = loadResults;
+    </script>
+</body>
+</html> 
