@@ -1,0 +1,128 @@
+/* 🌟 Reset Basic Styles */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #002855, #00509e);
+    overflow: hidden;
+    flex-direction: column;
+    animation: backgroundEffect 6s ease-in-out infinite alternate;
+  }
+  
+  /* 🔥 Background Animation */
+  @keyframes backgroundEffect {
+    0% { background: linear-gradient(to bottom, #002855, #00509e); }
+    50% { background: linear-gradient(to bottom, #000f3b, #0091ff); }
+    100% { background: linear-gradient(to bottom, #001233, #0077cc); }
+  }
+  
+  /* 🎇 Sparkling Effect */
+  body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 80%);
+    opacity: 0.6;
+    animation: sparkleEffect 5s linear infinite alternate;
+  }
+  
+  /* ✨ Sparkles Animation */
+  @keyframes sparkleEffect {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.8; transform: scale(1.2); }
+  }
+  
+  /* 🚀 Logo Styling */
+  .logo {
+    border-radius: 100%;
+    width: 150px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: -200px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+    animation: moveUp 2s ease-in-out forwards, glowEffect 3s infinite alternate;
+  }
+  
+  /* 🎥 Move-Up Animation */
+  @keyframes moveUp {
+    0% { bottom: -200px; transform: scale(0.5); opacity: 0; }
+    100% { bottom: 50%; transform: translateY(50%) scale(1); opacity: 1; }
+  }
+  
+  /* 💡 Glow Effect */
+  @keyframes glowEffect {
+    0% { box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4); }
+    100% { box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.9); }
+  }
+  
+  /* 🌊 Floating Effect */
+  @keyframes floating {
+    0%, 100% { transform: translateY(50%) scale(1); }
+    50% { transform: translateY(47%) scale(1.05); }
+  }
+  
+  .logo {
+    animation: moveUp 2s ease-in-out forwards, glowEffect 3s infinite alternate, floating 6s ease-in-out infinite;
+  }
+  
+  /* 🎉 Welcome Text Styling */
+  .welcome-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    bottom: 20%;
+    text-shadow: 10px 10px 15px rgba(7, 0, 0, 0.9);
+    letter-spacing: 3px;
+    animation: fadeIn .5s ease-in-out 2s forwards, bounce 3s ease-in-out infinite;
+  }
+  
+  /* 📜 Fade-In Effect */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* 🎈 Bounce Effect */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  /* 🕒 Auto Hide After 5 Seconds */
+  @keyframes hideScreen {
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+  
+  .splash-screen {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: inherit;
+    animation: hideScreen 1s ease-in-out 5s forwards;
+  }
+  
+  /* 📱 Responsive Styles */
+  @media (max-width: 768px) {
+    .logo { width: 220px; }
+    .welcome-text { font-size: 24px; bottom: 15%; }
+  }
+  
+  @media (max-width: 480px) {
+    .logo { width: 200px; }
+    .welcome-text { font-size: 20px; bottom: 10%; }
+  }
+  

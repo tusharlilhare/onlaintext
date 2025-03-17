@@ -107,7 +107,7 @@ function submitQuiz() {
     localStorage.setItem("score", score);
     localStorage.setItem("attempted", attempted);
     // window.location.href = "/test/submit-test.html";
-    window.location.href="/test/12th/mpboard/result.html";
+    window.location.href="/public/test/12th/mpboard/result.html";
 }
 
 window.onload = () => {
@@ -147,6 +147,6 @@ function submitQuiz() {
 
     localStorage.setItem("testResults", JSON.stringify(testResults));
 
-    window.location.href = "/test/12th/mpboard/result.html";
+    window.location.href = "/public/test/12th/mpboard/result.html";
 }
 
