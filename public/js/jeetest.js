@@ -1,119 +1,244 @@
 const questions = [
-    { num: 1, question: " 1 What is the SI unit of electric current?", options: ["Volt", "Ampere", "Ohm", "Watt"], answer: "Ampere", attempted: false, selected: "" },
-    { num: 2, question: " 2 What is the chemical symbol for water?", options: ["H2O", "CO2", "NaCl", "O2"], answer: "H2O", attempted: false, selected: "" },
-    { num: 3, question: "3 What planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Venus"], answer: "Mars", attempted: false, selected: "" },
-    { num: 4, question: "4 Who developed the theory of relativity?", options: ["Isaac Newton", "Albert Einstein", "Nikola Tesla", "Galileo Galilei"], answer: "Albert Einstein", attempted: false, selected: "" },
-    { num: 5, question: " 5 What gas do plants use for photosynthesis?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], answer: "Carbon Dioxide", attempted: false, selected: "" },
-    { num: 6, question: " 6 Which element has the chemical symbol 'Fe'?", options: ["Iron", "Fluorine", "Lead", "Gold"], answer: "Iron", attempted: false, selected: "" },
-    { num: 7, question: "7 What is the hardest natural substance on Earth?", options: ["Gold", "Diamond", "Quartz", "Iron"], answer: "Diamond", attempted: false, selected: "" },
-    { num: 8, question: "8 Which planet is closest to the sun?", options: ["Mercury", "Venus", "Earth", "Mars"], answer: "Mercury", attempted: false, selected: "" },
-    { num: 9, question: " 9 How many bones are there in the adult human body?", options: ["206", "210", "180", "230"], answer: "206", attempted: false, selected: "" },
-    { num: 10, question: " 10 What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris", attempted: false, selected: "" },
-    { num: 11, question: " 11 Which gas do humans breathe in to survive?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"], answer: "Oxygen", attempted: false, selected: "" },
-    { num: 12, question: " 12 What is the square root of 64?", options: ["6", "7", "8", "9"], answer: "8", attempted: false, selected: "" },
-    { num: 13, question: "13 Who wrote 'Hamlet'?", options: ["William Wordsworth", "William Shakespeare", "Jane Austen", "Mark Twain"], answer: "William Shakespeare", attempted: false, selected: "" },
-    { num: 14, question: " 14 Which planet is known for its rings?", options: ["Mars", "Jupiter", "Saturn", "Neptune"], answer: "Saturn", attempted: false, selected: "" },
-    { num: 15, question: "15 How many continents are there on Earth?", options: ["5", "6", "7", "8"], answer: "7", attempted: false, selected: "" },
-    { num: 16, question: "16 What is the boiling point of water in Celsius?", options: ["90°C", "100°C", "120°C", "150°C"], answer: "100°C", attempted: false, selected: "" },
-    { num: 17, question: " 17 What is the capital of Japan?", options: ["Beijing", "Seoul", "Bangkok", "Tokyo"], answer: "Tokyo", attempted: false, selected: "" },
-    { num: 18, question: " 18 Who painted the Mona Lisa?", options: ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Michelangelo"], answer: "Leonardo da Vinci", attempted: false, selected: "" },
-    { num: 19, question: "19 What is the largest ocean on Earth?", options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"], answer: "Pacific Ocean", attempted: false, selected: "" },
-    { num: 20, question: "20 What is the smallest prime number?", options: ["0", "1", "2", "3"], answer: "2", attempted: false, selected: "" },
-    { num: 21, question: " 21 Which country is known as the Land of the Rising Sun?", options: ["China", "Japan", "India", "South Korea"], answer: "Japan", attempted: false, selected: "" },
-    { num: 22, question: " 22 What is the speed of light?", options: ["300,000 km/s", "150,000 km/s", "500,000 km/s", "600,000 km/s"], answer: "300,000 km/s", attempted: false, selected: "" },
-    { num: 23, question: " 23 Which gas is used to fill balloons?", options: ["Oxygen", "Nitrogen", "Helium", "Carbon Dioxide"], answer: "Helium", attempted: false, selected: "" },
-    { num: 24, question: " 24 Who is the author of 'Harry Potter'?", options: ["J.R.R. Tolkien", "J.K. Rowling", "George R.R. Martin", "Stephen King"], answer: "J.K. Rowling", attempted: false, selected: "" },
-    { num: 25, question: "25 Which bird is known for its ability to mimic human speech?", options: ["Eagle", "Parrot", "Owl", "Pigeon"], answer: "Parrot", attempted: false, selected: "" },
-    { num: 26, question: "26 Which element is needed for breathing?", options: ["Oxygen", "Carbon", "Nitrogen", "Sulfur"], answer: "Oxygen", attempted: false, selected: "" },
-    { num: 27, question: " 27 What is the main ingredient in chocolate?", options: ["Sugar", "Milk", "Cocoa", "Flour"], answer: "Cocoa", attempted: false, selected: "" },
-    { num: 28, question: "28 Which instrument is used to measure temperature?", options: ["Barometer", "Thermometer", "Hygrometer", "Seismometer"], answer: "Thermometer", attempted: false, selected: "" },
-    { num: 29, question: " 29 How many colors are in a rainbow?", options: ["5", "6", "7", "8"], answer: "7", attempted: false, selected: "" },
-    { num: 30, question: " 30 Which metal is the best conductor of electricity?", options: ["Iron", "Copper", "Gold", "Silver"], answer: "Silver", attempted: false, selected: "" }
+    {
+        num: 1,
+        question_en: "What is the dimensional formula of Planck's constant?",
+        question_hi: "प्लैंक स्थिरांक का विमीय सूत्र क्या है?",
+        options_en: ["[ML²T⁻¹]", "[ML²T⁻²]", "[MLT⁻¹]", "[ML²T⁻³]"],
+        options_hi: ["[ML²T⁻¹]", "[ML²T⁻²]", "[MLT⁻¹]", "[ML²T⁻³]"],
+        answer: "[ML²T⁻¹]",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 2,
+        question_en: "A particle moves in a straight line with constant acceleration. If initial velocity is (u) and final velocity is (v), what is the distance traveled in time (t)?",
+        question_hi: "एक कण स्थिर त्वरण के साथ सीधी रेखा में चलता है। प्रारंभिक वेग (u) और अंतिम वेग (v) हो तो समय (t) में तय की गई दूरी क्या होगी?",
+        options_en: [
+            "(ut + ½at²)",
+            "(vt - ½at²)",
+            "((u+v)/2)t",
+            "((v² - u²)/2a)"
+        ],
+        options_hi: [
+            "(ut + ½at²) - प्रारंभिक वेग और त्वरण के आधार पर दूरी",
+            "(vt - ½at²) - अंतिम वेग और त्वरण का उपयोग",
+            "((u+v)/2)t - औसत वेग से दूरी",
+            "((v² - u²)/2a) - वेगों के अंतर के आधार पर दूरी"
+        ],
+        answer: "(ut + ½at²)",
+        attempted: false,
+        selected: ""
+    },
+    // Add more questions below
+    {
+        num: 3,
+        question_en: "What is the SI unit of electric charge?",
+        question_hi: "विद्युत आवेश का SI मात्रक क्या है?",
+        options_en: ["Coulomb", "Ampere", "Volt", "Ohm"],
+        options_hi: ["कूलॉम", "एम्पीयर", "वोल्ट", "ओम"],
+        answer: "Coulomb",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 4,
+        question_en: "Which of the following is a scalar quantity?",
+        question_hi: "निम्नलिखित में से कौन सा अदिश राशि है?",
+        options_en: ["Force", "Velocity", "Energy", "Momentum"],
+        options_hi: ["बल", "वेग", "ऊर्जा", "संवेग"],
+        answer: "Energy",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 5,
+        question_en: "What is the value of the universal gravitational constant (G)?",
+        question_hi: "सार्वत्रिक गुरुत्वाकर्षण स्थिरांक (G) का मान क्या है?",
+        options_en: ["6.674 × 10⁻¹¹ N·m²/kg²", "9.81 m/s²", "3.00 × 10⁸ m/s", "1.602 × 10⁻¹⁹ C"],
+        options_hi: ["6.674 × 10⁻¹¹ N·m²/kg²", "9.81 m/s²", "3.00 × 10⁸ m/s", "1.602 × 10⁻¹⁹ C"],
+        answer: "6.674 × 10⁻¹¹ N·m²/kg²",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 6,
+        question_en: "What is the formula for the force between two point charges?",
+        question_hi: "दो बिंदु आवेशों के बीच बल का सूत्र क्या है?",
+        options_en: ["F = k(q₁q₂)/r²", "F = ma", "F = G(m₁m₂)/r²", "F = qE"],
+        options_hi: ["F = k(q₁q₂)/r²", "F = ma", "F = G(m₁m₂)/r²", "F = qE"],
+        answer: "F = k(q₁q₂)/r²",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 7,
+        question_en: "What is the principle behind the working of a transformer?",
+        question_hi: "ट्रांसफॉर्मर के कार्य करने का सिद्धांत क्या है?",
+        options_en: ["Faraday's Law of Electromagnetic Induction", "Ohm's Law", "Coulomb's Law", "Ampere's Law"],
+        options_hi: ["फैराडे का विद्युत चुम्बकीय प्रेरण का नियम", "ओम का नियम", "कूलॉम का नियम", "एम्पीयर का नियम"],
+        answer: "Faraday's Law of Electromagnetic Induction",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 8,
+        question_en: "What is the speed of light in a vacuum?",
+        question_hi: "निर्वात में प्रकाश की गति क्या है?",
+        options_en: ["3.00 × 10⁸ m/s", "1.50 × 10⁸ m/s", "2.25 × 10⁸ m/s", "4.50 × 10⁸ m/s"],
+        options_hi: ["3.00 × 10⁸ m/s", "1.50 × 10⁸ m/s", "2.25 × 10⁸ m/s", "4.50 × 10⁸ m/s"],
+        answer: "3.00 × 10⁸ m/s",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 9,
+        question_en: "What is the formula for kinetic energy?",
+        question_hi: "गतिज ऊर्जा का सूत्र क्या है?",
+        options_en: ["KE = ½mv²", "KE = mgh", "KE = Fd", "KE = ½kx²"],
+        options_hi: ["KE = ½mv²", "KE = mgh", "KE = Fd", "KE = ½kx²"],
+        answer: "KE = ½mv²",
+        attempted: false,
+        selected: ""
+    },
+    {
+        num: 10,
+        question_en: "What is the unit of electric potential?",
+        question_hi: "विद्युत विभव का मात्रक क्या है?",
+        options_en: ["Volt", "Joule", "Watt", "Ohm"],
+        options_hi: ["वोल्ट", "जूल", "वाट", "ओम"],
+        answer: "Volt",
+        attempted: false,
+        selected: ""
+    },
+    // Continue adding more questions up to 30
 ];
 
-    let currentQuestion = 0;
+// Add more questions as needed...
 
-        function loadQuestion(index) {
-            document.getElementById("question").textContent = questions[index].question;
-            document.getElementById("questionCounter").textContent = `Question ${index + 1} of ${questions.length}`;
-            const optionsElement = document.getElementById("options");
-            optionsElement.innerHTML = "";
-            questions[index].options.forEach(option => {
-                optionsElement.innerHTML += `<li><input type="radio" name="option" value="${option}" onclick="markAttempted(${index}, '${option}')"> ${option}</li>`;
-            });
-            updateCircles();
+let currentQuestion = 0;
+let language = "en"; // Default English
+const circlesPerPage = 70;
+let currentCirclePage = 0;
+let timeLeft = 300;
+let timerInterval;
+
+function loadQuestion(index) {
+    const questionText = language === "en" ? questions[index].question_en : questions[index].question_hi;
+    const optionsArray = language === "en" ? questions[index].options_en : questions[index].options_hi;
+
+    document.getElementById("question").textContent = `${questions[index].num}. ${questionText}`;
+    document.getElementById("questionCounter").textContent = `Question ${index + 1} of ${questions.length}`;
+
+    const optionsElement = document.getElementById("options");
+    optionsElement.innerHTML = "";
+
+    optionsArray.forEach(option => {
+        optionsElement.innerHTML += `<li><input type="radio" name="option" value="${option}" onclick="markAttempted(${index}, '${option}')"> ${option}</li>`;
+    });
+
+    updateCircles();
+}
+
+function markAttempted(index, selectedAnswer) {
+    questions[index].attempted = true;
+    questions[index].selected = selectedAnswer;
+    updateCircles();
+}
+
+function nextQuestion() {
+    if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion(currentQuestion);
+    }
+}
+
+function updateCircles() {
+    const circleContainer = document.getElementById("circleContainer");
+    circleContainer.innerHTML = "";
+    const start = currentCirclePage * circlesPerPage;
+    const end = Math.min(start + circlesPerPage, questions.length);
+
+    for (let i = start; i < end; i++) {
+        const q = questions[i];
+        let status = i === currentQuestion ? "active" : q.attempted ? "answered" : "not-attempted";
+        circleContainer.innerHTML += `<div class="circle ${status}" onclick="jumpToQuestion(${i})">${i + 1}</div>`;
+    }
+}
+
+function jumpToQuestion(index) {
+    currentQuestion = index;
+    loadQuestion(index);
+}
+
+function prevCirclePage() {
+    if (currentCirclePage > 0) {
+        currentCirclePage--;
+        updateCircles();
+    }
+}
+
+function nextCirclePage() {
+    if ((currentCirclePage + 1) * circlesPerPage < questions.length) {
+        currentCirclePage++;
+        updateCircles();
+    }
+}
+
+function changeLanguage() {
+    language = document.getElementById("languageSelect").value;
+    loadQuestion(currentQuestion);
+}
+
+function submitQuiz() {
+    let confirmation = confirm("Are you sure you want to submit the test?");
+    if (!confirmation) return;
+
+    let attempted = 0, notAttempted = 0, score = 0;
+    const results = [];
+
+    questions.forEach(q => {
+        if (q.attempted) {
+            attempted++;
+            if (q.selected === q.answer) score++;
+        } else {
+            notAttempted++;
         }
+        results.push({ question: q.question_en, selected: q.selected || "Not Answered", correct: q.answer });
+    });
 
-        function markAttempted(index, selectedAnswer) {
-            questions[index].attempted = true;
-            questions[index].selected = selectedAnswer;
-            updateCircles();
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("notAttempted", notAttempted);
+    localStorage.setItem("score", score);
+    localStorage.setItem("results", JSON.stringify(results));
+
+    let viewResult = confirm("Test submitted successfully! Do you want to view your result?");
+    if (viewResult) {
+        window.location.href = "/test/submit-test.html";
+    }
+}
+
+function startTimer() {
+    const timerElement = document.getElementById("timer");
+    timerInterval = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert("Time's up! Submitting the quiz automatically.");
+            submitQuiz();
+        } else {
+            timerElement.textContent = timeLeft;
+            timeLeft--;
         }
+    }, 1000);
+}
 
-        function nextQuestion() {
-            if (currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                loadQuestion(currentQuestion);
-            }
-        }
-
-        function prevQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                loadQuestion(currentQuestion);
-            }
-        }
-
-        function updateCircles() {
-            const circleContainer = document.getElementById("circleContainer");
-            circleContainer.innerHTML = "";
-            questions.forEach((q, i) => {
-                let status = i === currentQuestion ? "active" : q.attempted ? "answered" : "not-attempted";
-                circleContainer.innerHTML += `<div class="circle ${status}" onclick="jumpToQuestion(${i})">${i + 1}</div>`;
-            });
-        }
-
-        function jumpToQuestion(index) {
-            currentQuestion = index;
-            loadQuestion(index);
-        }
-
-        function submitQuiz() {
-            let confirmation = confirm("Are you sure you want to submit the test?");
-            
-            if (!confirmation) {
-                return; // अगर यूज़र 'Cancel' करता है तो आगे नहीं बढ़ेंगे
-            }
-
-            let attempted = 0;
-            let notAttempted = 0;
-            let score = 0;
-            const results = [];
-
-            questions.forEach(q => {
-                if (q.attempted) {
-                    attempted++;
-                    if (q.selected === q.answer) {
-                        score++;
-                    }
-                } else {
-                    notAttempted++;
-                }
-                results.push({ question: q.question, selected: q.selected || "Not Answered", correct: q.answer });
-            });
-
-            localStorage.setItem("attempted", attempted);
-            localStorage.setItem("notAttempted", notAttempted);
-            localStorage.setItem("score", score);
-            localStorage.setItem("results", JSON.stringify(results));
-
-            // रिजल्ट देखने से पहले एक और कन्फर्मेशन ले सकते हैं
-            let viewResult = confirm("Test submitted successfully! Do you want to view your result?");
-            if (viewResult) {
-                window.location.href = "/test/submit-test.html";
-            }
-        }
-
-        window.onload = () => {
-            loadQuestion(currentQuestion);
-        };
+window.onload = function () {
+    startTimer();
+    loadQuestion(currentQuestion);
+};

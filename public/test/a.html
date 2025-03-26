@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App - English & Hindi</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #222; color: #fff; padding: 20px; }
+    .question { font-size: 20px; margin-bottom: 20px; }
+    .option { margin: 10px 0; }
+    button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <div class="question" id="questionBox"></div>
+  <div id="optionsBox"></div>
+
+  <button onclick="nextQuestion()">Next</button>
+
+  <br><br>
+  <button onclick="switchLanguage('en')">English</button>
+  <button onclick="switchLanguage('hi')">हिंदी</button>
+
+  <script>
+    let currentQuestionIndex = 0;
+    let language = "en";  // Default language English
+
+    const questions = [
+      {
+        num: 1,
+        question_en: "What is the dimensional formula of Planck's constant?",
+        question_hi: "प्लैंक स्थिरांक का विमीय सूत्र क्या है?",
+        options_en: ["[ML²T⁻¹]", "[ML²T⁻²]", "[MLT⁻¹]", "[ML²T⁻³]"],
+        options_hi: ["[ML²T⁻¹]", "[ML²T⁻²]", "[MLT⁻¹]", "[ML²T⁻³]"],
+        answer: "[ML²T⁻¹]"
+      },
+      {
+        num: 2,
+        question_en: "What is the SI unit of electric flux?",
+        question_hi: "विद्युत फ्लक्स की SI इकाई क्या है?",
+        options_en: ["Volt-meter", "Tesla", "Weber", "Coulomb"],
+        options_hi: ["वोल्ट-मीटर", "टेस्ला", "वेबर", "कूलम्ब"],
+        answer: "Volt-meter"
+      },
+      {
+        num: 3,
+        question_en: "Which gas is used in electric bulbs?",
+        question_hi: "बिजली के बल्बों में कौन सी गैस भरी जाती है?",
+        options_en: ["Nitrogen", "Oxygen", "Argon", "Hydrogen"],
+        options_hi: ["नाइट्रोजन", "ऑक्सीजन", "आर्गन", "हाइड्रोजन"],
+        answer: "Argon"
+      }
+      // Add more questions as needed
+    ];
+
+    function showQuestion() {
+      const q = questions[currentQuestionIndex];
+      const questionText = (language === 'en') ? q.question_en : q.question_hi;
+      const optionsArray = (language === 'en') ? q.options_en : q.options_hi;
+
+      document.getElementById('questionBox').innerHTML = `Q${q.num}: ${questionText}`;
+
+      let optionsHtml = '';
+      optionsArray.forEach((opt, index) => {
+        optionsHtml += `<div class="option">
+                          <input type="radio" name="option" value="${opt}"> ${opt}
+                        </div>`;
+      });
+
+      document.getElementById('optionsBox').innerHTML = optionsHtml;
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion();
+      } else {
+        alert("🎉 Quiz Finished!");
+      }
+    }
+
+    function switchLanguage(lang) {
+      language = lang;
+      showQuestion();
+    }
+
+    // Show the first question when page loads
+    showQuestion();
+  </script>
+
+</body>
+</html>

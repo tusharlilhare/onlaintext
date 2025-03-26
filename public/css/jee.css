@@ -14,6 +14,13 @@ header {
     font-size: 14px;
 }
 
+
+.container {
+
+    margin: 50px 0 0 30px; /* Move container 30px to the right */
+    padding: 20px;
+
+  }
 /* Main Layout */
 .main-container {
     display: flex;
@@ -22,12 +29,18 @@ header {
     padding: 20px;
     width: 700px;
     margin: auto;
+  
+ 
+}
+
+.container{
+    margin-right: 40px;
 }
 
 /* Quiz Section */
 .quiz-container {
     flex: 2;
-    background-color: white;
+    background-color: rgb(206, 36, 36);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,7 +69,7 @@ header {
 }
 
 .question {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -117,16 +130,66 @@ header {
 .buttons button:hover {
     opacity: 0.8;
 }
+/* Dark theme for the select dropdown */
+.language-select {
+    padding: 10px 35px 10px 15px; /* Padding for better spacing */
+    font-size: 16px; /* Font size */
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text color */
+    cursor: pointer; /* Pointer cursor */
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234CAF50"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 12px; /* Size of the arrow */
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Hover effect */
+  .language-select:hover {
+    background-color: #444; /* Slightly lighter background on hover */
+    border-color: #45a049; /* Darker border on hover */
+  }
+  
+  /* Focus effect */
+  .language-select:focus {
+    border-color: #4CAF50; /* Keep border color on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Subtle shadow */
+  }
+  
+  /* Style for the dropdown options */
+  .language-select option {
+    background-color: #333; /* Dark background for options */
+    color: #fff; /* White text color for options */
+    padding: 10px; /* Padding for options */
+  }
+  
+  /* Style for the dropdown when open */
+  .language-select:active,
+  .language-select:focus {
+    background-color: #444; /* Slightly lighter background when open */
+  }
+/*  taimer */
+
+/* .timer{
+    width: 90px;
+    height: 40px;
+    border-radius: 10%; 
+    margin-left: 887px;
+} */
+
 
 .sidebar {
             flex: 1;
-            background-color: white;
+
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-            margin-left: 950px;
-            margin-top: -350px;
+            /* max-width: 400px; */
+            margin-left: 1100px;
+            margin-top: -450px;
         }
 
         .status-indicator p {
@@ -166,7 +229,7 @@ header {
 }
 
 .circle.not-attempted {
-    background-color: #67077f;
+    background-color: #7f807f;
     color: white;
 }
 
@@ -174,57 +237,34 @@ header {
     background-color: #2a05df;
     color: black;
 }
-
-/* Status Indicators */
 .status-indicator {
+    width: 300px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     text-align: left;
     padding-left: 20px;
-    
 }
 
 .status-indicator p {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    margin-bottom: 5px;
+    gap: 18px;
+    font-size: 18px;
+    margin: 10px 0;
+    
 }
-
-.status-indicator span {
-    display: inline-block;
-    width: 54px;
-    height: 14px;
-    border-radius: 50%;
-}
-
-
-.status-indicator {
-    width: 250px;  /* Width badhaya */
-    height: 150px; /* Height badhaya */
-    padding: 15px; /* Extra padding */
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.status-indicator p {
-    font-size: 18px; /* Font size badhaya */
-    margin: 10px 0; /* Spacing badhaya */
-}
-
 
 .status-indicator p span {
     display: inline-block;
-    width: 15px;  /* Circle width */
-    height: 15px; /* Circle height */
-    border-radius: 50%; /* Circle shape */
-    text-align: center;
-    font-size: 14px; /* Adjusted font size */
-    line-height: 15px;
+    width: 20px;   /* Circle ka size */
+    height: 20px;
+    border-radius: 50%;  /* Circle shape */
 }
 
-/* Indicator Colors */
+/* Colors */
 .status-indicator .answered span {
     background-color: #077120d1;
 }
@@ -239,4 +279,5 @@ header {
 
 .status-indicator .visited span {
     background-color: rgb(253, 246, 246);
+    border: 1px solid #ccc;
 }
